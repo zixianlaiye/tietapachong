@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mymagic:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="mymagic.war">
+      <element id="artifact" artifact-name="mymagic:war exploded" />
+    </root>
+  </artifact>
+</component>
