@@ -145,6 +145,8 @@ public class OrderPageProcessor implements PageProcessor {
 
         if(page.getUrl().toString().startsWith("http://www.tower.com.cn/default/main/skins/menubar/cn.chinatowercom.obp.portal.getProtal.showSupplyOrder.biz.ext?ProvinceOrgCode=")){
 
+
+
             String type="";
             Matcher typeMatcher=typePattern.matcher(page.getUrl().toString());
             if(typeMatcher.find())
