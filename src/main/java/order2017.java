@@ -19,8 +19,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+
 public class order2017  implements PageProcessor{
 
+    public static Object lock=new Object();
+
+    public  static int number=0;
 
 
 
@@ -34,6 +38,8 @@ public class order2017  implements PageProcessor{
         typeList.put("33","嵌入开关电源");
         typeList.put("34","壁挂开关电源");
         typeList.put("54","动环监控设备FSU");
+        typeList.put("64","户外型动环监控设备FSU");
+        typeList.put("65","电量分路计量设备");
 
 
     }
@@ -60,7 +66,10 @@ public class order2017  implements PageProcessor{
     public static int [] province= {130001, 530001, 370001, 510001, 620001, 430001, 500001, 520001, 410001, 320001, 360001, 340001, 440001, 140001, 230001, 450001, 610001, 420001, 330001, 650001, 150001, 460001, 350001, 210001, 120001, 630001, 640001, 220001, 110001, 540001, 310001
     };
 
-    public static int[] type={21,22,32,33,34,54};
+    public static int[] type={21,22,32,33,34,54,64,65};
+//    public  static int[] type={64};
+
+
 
 
 
@@ -83,6 +92,7 @@ public class order2017  implements PageProcessor{
 
 
                     urlList.add(url.toString());
+                    //对url内容清空
                     url.delete(0,url.length());
 
 
@@ -211,22 +221,19 @@ public class order2017  implements PageProcessor{
 
 
             //对数据的写入：
-            synchronized (this)
+            synchronized (lock)
             {
 
                 try{
-//                    File writename = new File();
-//                    BufferedWriter out = new BufferedWriter(new FileWriter(writename));
-//
-//                    out.write();
-//                    out.flush();
-                    String fileName="/Users/wangdong/order.txt";
+
+                    String fileName="/Users/wangdong/order/20171127.txt";
 
                     FileWriter writer = new FileWriter(fileName, true);
 
                     //若要分类，就判断一下url所属分类，写入不同的txt文件就行了
                     for(Order a:orders)
                     {
+                        number++;
                         writer.write(status+","+a.toCsv()+"\r\n");
 
                     }

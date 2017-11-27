@@ -135,7 +135,7 @@ public class Price2PageProcessor implements PageProcessor{
 
                 try{
 
-                    String fileName="/home/dongdong/price2.txt";
+                    String fileName="/Users/wangdong/price2.txt";
 
                     FileWriter writer = new FileWriter(fileName, true);
 

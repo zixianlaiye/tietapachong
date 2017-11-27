@@ -23,6 +23,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+//产品报价信息
+
 public class PricePageProcessor implements PageProcessor{
 
     public static String [] url=new String[6] ;
@@ -79,7 +81,7 @@ if(page.getUrl().toString().startsWith("http://www.tower.com.cn/default/main/ski
     {
         try{
 
-            String fileName="/home/dongdong/price1.txt";
+            String fileName="/Users/wangdong/price1.txt";
 
             FileWriter writer = new FileWriter(fileName, true);
 

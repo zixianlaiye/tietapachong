@@ -7,11 +7,12 @@ package entity;
 //订单表实体类
 public class Order {
     private  String supplyname;
+    private String  orderdate;
     private String orgname;
 
     private String  provinceorgname;
     private String  ordercode;
-    private String  orderdate;
+
     private String  taxamount;
     private String materialcode;
     private String materialname;
@@ -20,21 +21,21 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "supplyname='" + supplyname + '\'' +
+                ", orderdate='" + orderdate + '\'' +
                 ", orgname='" + orgname + '\'' +
                 ", provinceorgname='" + provinceorgname + '\'' +
                 ", ordercode='" + ordercode + '\'' +
-                ", orderdate='" + orderdate + '\'' +
                 ", taxamount='" + taxamount + '\'' +
                 ", materialcode='" + materialcode + '\'' +
                 ", materialname='" + materialname + '\'' +
                 '}';
     }
-
+   
 
     //以Csv格式输出一条数据
     public String toCsv()
     {
-         return supplyname+","+orgname+","+provinceorgname+","+ordercode+","+orderdate+","+taxamount+","+materialcode+","+materialname;
+         return supplyname+","+ orderdate+","+provinceorgname+","+ordercode+","+orgname+","+taxamount+","+materialcode+","+materialname;
 
     }
 
