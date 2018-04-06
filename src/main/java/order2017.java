@@ -226,7 +226,7 @@ public class order2017  implements PageProcessor{
 
                 try{
 
-                    String fileName="/Users/wangdong/order/20171127.txt";
+                    String fileName="/Users/wangdong/order/0328.txt";
 
                     FileWriter writer = new FileWriter(fileName, true);
 
@@ -273,6 +273,7 @@ public class order2017  implements PageProcessor{
 
 
         Spider.create(new order2017()).addUrl(url).thread(10).run();
+
     }
 
 

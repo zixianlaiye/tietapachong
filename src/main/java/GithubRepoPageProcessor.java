@@ -57,7 +57,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
     private Site site = Site.me().setRetryTimes(3).setSleepTime(100).setTimeOut(1000000);
 
 
-    @Override
+
     public void process(Page page) {
 
         //主页
