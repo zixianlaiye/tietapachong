@@ -76,7 +76,7 @@ public class order2017  implements PageProcessor{
     public void process(Page page) {
 
         //主页
-        if (page.getUrl().toString() == "https://www.toryburch.com/stores-viewal")
+        if (page.getUrl().toString() == "http://www.narutom.com")
         {
             List<String> urlList = new ArrayList<String>();
 
@@ -106,6 +106,7 @@ public class order2017  implements PageProcessor{
 
 
         }
+
 
 
         //从省份信息中获取公司列表
@@ -226,7 +227,7 @@ public class order2017  implements PageProcessor{
 
                 try{
 
-                    String fileName="/Users/wangdong/order/0328.txt";
+                    String fileName="/Users/wangdong/order/1106.txt";
 
                     FileWriter writer = new FileWriter(fileName, true);
 
@@ -263,15 +264,17 @@ public class order2017  implements PageProcessor{
 
 
 
-    public Site getSite() {
+    public Site getSite()
+    {
         return site;
     }
 
 
     public static void main(String[] args) {
-        String url="https://www.toryburch.com/stores-viewal";
+        String url="http://www.narutom.com";
 
 
+        System.out.println();
         Spider.create(new order2017()).addUrl(url).thread(10).run();
 
     }
