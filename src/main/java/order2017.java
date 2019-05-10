@@ -76,7 +76,7 @@ public class order2017  implements PageProcessor{
     public void process(Page page) {
 
         //主页
-        if (page.getUrl().toString() == "http://www.narutom.com")
+        if (page.getUrl().toString() == "http://www.baidu.com")
         {
             List<String> urlList = new ArrayList<String>();
 
@@ -227,7 +227,7 @@ public class order2017  implements PageProcessor{
 
                 try{
 
-                    String fileName="/Users/wangdong/order/1124.txt";
+                    String fileName="/Users/wangdong/order/0510.txt";
 
                     FileWriter writer = new FileWriter(fileName, true);
 
@@ -271,11 +271,11 @@ public class order2017  implements PageProcessor{
 
 
     public static void main(String[] args) {
-        String url="http://www.narutom.com";
+        String url="http://www.baidu.com";
 
 
         System.out.println();
-        Spider.create(new order2017()).addUrl(url).thread(10).run();
+        Spider.create(new order2017()).addUrl(url).thread(60).run();
 
     }
 
